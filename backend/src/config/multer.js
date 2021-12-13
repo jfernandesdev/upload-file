@@ -37,12 +37,9 @@ const storageTypes = {
   }),
 };
 
-// const storage = process.env.NODE_ENV === 'prod' ? storageTypes.s3 : storageTypes.local;
-const storage = storageTypes.s3;
-
 module.exports = {
   dest: path.resolve(__dirname, '..', '..', 'tmp', 'uploads'),
-  storage: storage,
+  storage: storageTypes[process.env.STORAGE_TYPE],
   limits: {
     fileSize: 2 * 1024 * 1024, //máx 2MB 
   },
