@@ -16,12 +16,13 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body, #root {
     height: 100%;
+    overflow-x: hidden;
   }
 
   :root {
     --purple: #684DB9;
-    --green: #83EBD5;
-    --red: #D76474;
+    --green: #78E5D5;
+    --red: #E57878;
     --black: #000;
     --white: #FFF;
     --lightPurple: #D9E5F1;
