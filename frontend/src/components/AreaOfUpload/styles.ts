@@ -3,6 +3,10 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   margin-left: auto !important;
   padding: 10px 30px;
+
+  @media(max-width: 768px) {
+    padding: 10px 0px;
+  }
 `;
 
 const dragActive = css`

@@ -7,6 +7,7 @@ export const Container = styled.div`
   grid-gap: 50px;
   justify-content: center;
   align-items: center;
+  padding: 0 10%;
   
   div {
     height: 100%;
