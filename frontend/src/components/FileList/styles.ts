@@ -3,7 +3,24 @@ import styled from 'styled-components';
 export const Container = styled.ul`
   margin-top: 20px;
   list-style: none;
-  max-width: 400px;
+  max-width: 450px;
+  max-height: calc(100vh - 220px);
+  overflow-Y: scroll;
+  padding: 20px;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--lightPurple);
+    border-radius: 25px;
+  }
 
   li {
     display: flex;
@@ -36,6 +53,13 @@ export const FileInfo = styled.div`
   div {
     display: flex;
     flex-direction: column;
+
+    > strong {
+      max-width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   
     span {
       font-size: 12px;
