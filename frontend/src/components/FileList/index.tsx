@@ -7,9 +7,10 @@ import { FiLink } from 'react-icons/fi';
 
 interface FileListProps {
   files: any;
+  onDelete: (id: string) => void;
 }
 
-export const FileList: React.FC<FileListProps> = ({files}) => {
+export const FileList: React.FC<FileListProps> = ({files, onDelete}) => {
   return (
     <Container>
      {files.map((uploadedFile:any) => (
@@ -21,7 +22,7 @@ export const FileList: React.FC<FileListProps> = ({files}) => {
             <strong>{uploadedFile.name}</strong>
             <span>
               {uploadedFile.readableSize}
-              {!!uploadedFile.url && (<button onClick={() => {}}>Excluir</button> )}
+              {!!uploadedFile.url && (<button onClick={() => onDelete(uploadedFile.id)}>Excluir</button> )}
             </span>
           </div>
         </FileInfo>

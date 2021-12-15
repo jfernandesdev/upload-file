@@ -33,7 +33,6 @@ interface DropContainerProps{
 
 export const DropContainer = styled.div.attrs({ className: 'dropzone'})<DropContainerProps>`
   width: 100%;
-  min-width: 375px;
   border: 1px dashed var(--lightGray); 
   border-radius: 15px;
   cursor: pointer;
@@ -42,11 +41,16 @@ export const DropContainer = styled.div.attrs({ className: 'dropzone'})<DropCont
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding: 10% 20%;
+  padding: 10% 5%;
   transition: height 0.2s ease;
 
   ${props => props.isDragActive && dragActive};
   ${props => props.isDragReject && dragReject};
+
+  @media(min-width: 768px) {
+    min-width: 375px;
+    padding: 10% 20%;
+  }
 `;
 
 export const Button = styled.button`
@@ -71,7 +75,6 @@ export const Text = styled.span`
   color: var(--gray);
   font-size: 0.9em;
 `;
-
 
 const messageColors:any = {
   default: '#000',

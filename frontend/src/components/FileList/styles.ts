@@ -3,15 +3,25 @@ import styled from 'styled-components';
 export const Container = styled.ul`
   margin-top: 20px;
   list-style: none;
-  max-width: 450px;
+  
   max-height: calc(100vh - 220px);
   overflow-Y: scroll;
   padding: 20px;
+
+  @media(min-width: 769px) {
+    max-width: 450px;
+  }
+
+  @media(max-width: 768px) {
+    padding: 5px;
+    overflow-Y: auto;
+  }
 
   ::-webkit-scrollbar {
     width: 6px;
   }
 
+  
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 25px;
@@ -55,10 +65,15 @@ export const FileInfo = styled.div`
     flex-direction: column;
 
     > strong {
-      max-width: 250px;
+      max-width: 225px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
+
+      @media(max-width: 600px) {
+        max-width: 150px;
+      }
     }
   
     span {

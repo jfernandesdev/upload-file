@@ -9,12 +9,28 @@ import { Header } from './components/Header';
 import { AreaOfUpload } from './components/AreaOfUpload';
 import { FileList } from './components/FileList';
 
-import { Container } from './styles';
+import { Container, Alert, Footer } from './styles';
 
 class App extends Component {
   state = {
     uploadedFiles: []
   };
+
+  //list all files
+  // async componentDidMount() {
+  //   const response = await api.get('posts');
+
+  //   this.setState({
+  //     uploadedFiles: response.data.map(file => ({
+  //       id: file._id,
+  //       name: file.name,
+  //       readableSize: filesize(file.size),
+  //       preview: file.url,
+  //       uploaded: true,
+  //       url: file.url,
+  //     }))
+  //   })
+  // }
 
   handleUpload = files => {
    const uploadedFiles = files.map(file => ({
@@ -55,9 +71,31 @@ class App extends Component {
 
         this.updateFile(uploadedFile.id, {
           progress,
-        } )
+        });
       }
+    }).then(response => {
+      this.updateFile(uploadedFile.id, {
+        uploaded: true,
+        id: response.data._id,
+        url: response.data.url,
+      });
+    }).catch( response => {
+      this.updateFile(uploadedFile.id, {
+        error: true
+      });
+    });
+  };
+
+  handleDelete = async id => {
+    await api.delete(`posts/${id}`);
+
+    this.setState({
+      uploadedFiles: this.state.uploadedFiles.filter(file => file.id !== id),
     })
+  };
+
+  componentWillUnmount() {
+    this.state.uploadedFiles.forEach(file => URL.revokeObjectURL(file.preview));
   }
 
   render()  {
@@ -69,9 +107,12 @@ class App extends Component {
           <AreaOfUpload onUpload={this.handleUpload} />
 
           { !!uploadedFiles.length ? (
-            <FileList files={uploadedFiles} />
-          ) : <div>Nenhum arquivo enviado!</div>}
+            <FileList files={uploadedFiles} onDelete={this.handleDelete} />
+          ) : <Alert>Nenhum arquivo enviado!</Alert>}
+
         </Container>
+        
+        <Footer><b>Atenção:</b> Este projeto trata-se de uma aplicação fictícia para fins didáticos. Por favor, não compartilhe documentos pessoais ou de conteúdo impróprio. </Footer>
       </>
     );
   }
