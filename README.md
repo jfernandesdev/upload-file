@@ -36,9 +36,12 @@ Este projeto (backend e frontend) trata-se de uma plataforma de armazenamento de
 
 Layout disponível no Figma: https://www.figma.com/file/k4WQXlfg6FTQhsGCZvZMeH/upload-file
 
-### Desktop (screenshot):
 
-### Mobile (screenshot):
+### Desktop e Mobile (screenshot):
+
+| Desktop| Mobile | Mobile |
+| --- | --- | --- |
+| <img src="https://github.com/jfernandesdev/upload-file/blob/1c06ec3e42ccf0648a5cce5a2ffc87888ced6bd1/frontend/public/layout/layout-2-desktop.png" /> | <img src="https://github.com/jfernandesdev/upload-file/blob/1c06ec3e42ccf0648a5cce5a2ffc87888ced6bd1/frontend/public/layout/layout-1-mobile.png" width='300px' /> | <img src="https://github.com/jfernandesdev/upload-file/blob/1c06ec3e42ccf0648a5cce5a2ffc87888ced6bd1/frontend/public/layout/layout-2-mobile.png" width='300px' /> | 
 
 ### Dê uma olhada como o projeto ficou! 👀
 
