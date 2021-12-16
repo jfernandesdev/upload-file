@@ -33,6 +33,7 @@ interface DropContainerProps{
 
 export const DropContainer = styled.div.attrs({ className: 'dropzone'})<DropContainerProps>`
   width: 100%;
+  height: 425px;
   border: 1px dashed var(--lightGray); 
   border-radius: 15px;
   cursor: pointer;
@@ -50,6 +51,16 @@ export const DropContainer = styled.div.attrs({ className: 'dropzone'})<DropCont
   @media(min-width: 768px) {
     min-width: 375px;
     padding: 10% 20%;
+  }
+
+  @media(max-width: 600px) {
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    > img { 
+      width: 80px;
+    }
   }
 `;
 

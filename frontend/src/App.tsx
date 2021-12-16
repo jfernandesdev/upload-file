@@ -17,20 +17,20 @@ class App extends Component {
   };
 
   //list all files
-  // async componentDidMount() {
-  //   const response = await api.get('posts');
+  async componentDidMount() {
+    const response = await api.get('posts');
 
-  //   this.setState({
-  //     uploadedFiles: response.data.map(file => ({
-  //       id: file._id,
-  //       name: file.name,
-  //       readableSize: filesize(file.size),
-  //       preview: file.url,
-  //       uploaded: true,
-  //       url: file.url,
-  //     }))
-  //   })
-  // }
+    this.setState({
+      uploadedFiles: response.data.map(file => ({
+        id: file._id,
+        name: file.name,
+        readableSize: filesize(file.size),
+        preview: file.url,
+        uploaded: true,
+        url: file.url,
+      }))
+    })
+  }
 
   handleUpload = files => {
    const uploadedFiles = files.map(file => ({
@@ -112,7 +112,7 @@ class App extends Component {
 
         </Container>
         
-        <Footer><b>Atenção:</b> Este projeto trata-se de uma aplicação fictícia para fins didáticos. Por favor, não compartilhe documentos pessoais ou de conteúdo impróprio. </Footer>
+        <Footer><span><b>Atenção:</b> Este projeto trata-se de uma aplicação fictícia para fins didáticos. <br />Por favor, não compartilhe documentos pessoais ou de conteúdo impróprio.</span></Footer>
       </>
     );
   }

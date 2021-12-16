@@ -38,7 +38,7 @@ export class AreaOfUpload extends Component<AreaOfUploadProps> {
               {this.renderDragMessage(isDragActive, isDragReject)}
     
               <Text>ou</Text>
-              <Button type='button'>Buscar</Button>
+              <Button type='button'>Selecionar</Button>
               <Text>JPG, PNG ou GIF de até 2 MB cada</Text>
             </DropContainer>
           )}

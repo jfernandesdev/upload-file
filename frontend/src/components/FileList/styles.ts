@@ -6,10 +6,11 @@ export const Container = styled.ul`
   
   max-height: calc(100vh - 220px);
   overflow-Y: scroll;
+  overflow-X: hidden;
   padding: 20px;
 
   @media(min-width: 769px) {
-    max-width: 450px;
+    max-width: 500px;
   }
 
   @media(max-width: 768px) {
